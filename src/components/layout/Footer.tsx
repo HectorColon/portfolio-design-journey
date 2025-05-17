@@ -18,7 +18,7 @@ const Footer = () => {
               href="https://github.com" 
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-portfolio-primary transition-colors relative p-1 after:absolute after:inset-0 after:border after:border-transparent hover:after:border-portfolio-primary after:rounded-md after:transition-all"
+              className="text-gray-400 hover:text-portfolio-primary transition-colors border border-transparent hover:border-portfolio-primary rounded-md p-2"
               aria-label="GitHub"
             >
               <Github size={18} />
@@ -27,14 +27,14 @@ const Footer = () => {
               href="https://linkedin.com" 
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-portfolio-primary transition-colors relative p-1 after:absolute after:inset-0 after:border after:border-transparent hover:after:border-portfolio-primary after:rounded-md after:transition-all"
+              className="text-gray-400 hover:text-portfolio-primary transition-colors border border-transparent hover:border-portfolio-primary rounded-md p-2"
               aria-label="LinkedIn"
             >
               <Linkedin size={18} />
             </a>
             <a 
               href="mailto:hcolonsoftdev@gmail.com" 
-              className="text-gray-400 hover:text-portfolio-primary transition-colors relative p-1 after:absolute after:inset-0 after:border after:border-transparent hover:after:border-portfolio-primary after:rounded-md after:transition-all"
+              className="text-gray-400 hover:text-portfolio-primary transition-colors border border-transparent hover:border-portfolio-primary rounded-md p-2"
               aria-label="Email"
             >
               <Mail size={18} />

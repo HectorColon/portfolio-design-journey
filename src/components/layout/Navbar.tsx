@@ -51,7 +51,7 @@ const Navbar = () => {
             <Link 
               key={index}
               to={link.href} 
-              className="text-white hover:text-portfolio-primary relative px-2 py-1 transition-colors after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-portfolio-primary hover:after:w-full after:transition-all after:duration-300"
+              className="text-white hover:text-portfolio-primary border border-transparent hover:border-portfolio-primary px-4 py-2 rounded-md transition-all duration-300"
             >
               {link.text}
             </Link>
@@ -66,7 +66,7 @@ const Navbar = () => {
                 <Link 
                   key={index}
                   to={link.href} 
-                  className="text-white hover:text-portfolio-primary relative px-2 py-1 transition-colors after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-portfolio-primary hover:after:w-full after:transition-all after:duration-300"
+                  className="text-white hover:text-portfolio-primary border border-transparent hover:border-portfolio-primary px-4 py-2 rounded-md transition-all duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.text}
