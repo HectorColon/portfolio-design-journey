@@ -1,25 +1,39 @@
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
 
 const NotFound = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
-  }, [location.pathname]);
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
-      </div>
+    <div className="flex flex-col min-h-screen bg-black">
+      <Navbar />
+      
+      <main className="flex-grow flex items-center justify-center">
+        <div className="container mx-auto px-4 py-16 text-center">
+          <div className="relative">
+            <div className="absolute top-0 left-0 w-full">
+              <h1 className="big-title">404</h1>
+            </div>
+            
+            <h1 className="text-white mb-6">Page Not Found</h1>
+            
+            <p className="text-gray-400 max-w-lg mx-auto mb-8">
+              The page you are looking for might have been removed, had its name changed,
+              or is temporarily unavailable.
+            </p>
+            
+            <Link to="/">
+              <Button className="bg-portfolio-primary hover:bg-portfolio-secondary text-white">
+                Return to Home
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </main>
+      
+      <Footer />
     </div>
   );
 };
