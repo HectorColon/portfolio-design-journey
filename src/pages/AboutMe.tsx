@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -117,9 +117,13 @@ const AboutMe = () => {
               </div>
               
               <div className="mt-12 text-center">
-                <Button variant="outline" className="border-portfolio-primary text-white hover:bg-portfolio-primary transition-all duration-300 text-lg px-8 py-6 hover:border-portfolio-secondary">
-                  Download CV
-                </Button>
+                <a 
+                  href="#" 
+                  className="inline-flex items-center justify-center gap-2 bg-gray-800 text-gray-400 hover:text-portfolio-primary border border-transparent hover:border-portfolio-primary rounded-md p-3 transition-colors"
+                >
+                  <Download size={20} />
+                  <span>Download CV</span>
+                </a>
               </div>
             </div>
           </div>
