@@ -1,11 +1,64 @@
 
-import React from 'react';
-import Blob from '@/components/ui/blob/Blob';
+import React, { useEffect, useState } from 'react';
 import { Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const AboutMe = () => {
+  const [animatedYears, setAnimatedYears] = useState(0);
+  const [animatedCerts, setAnimatedCerts] = useState(0);
+  const [animatedLangs, setAnimatedLangs] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    setIsVisible(true);
+    
+    const yearsDuration = 2000; // 2 seconds for the animation
+    const yearsFPS = 60;
+    const yearsIncrement = 4 / (yearsDuration / 1000 * yearsFPS);
+    const yearsInterval = setInterval(() => {
+      setAnimatedYears(prev => {
+        if (prev >= 4) {
+          clearInterval(yearsInterval);
+          return 4;
+        }
+        return Math.min(prev + yearsIncrement, 4);
+      });
+    }, 1000 / yearsFPS);
+    
+    const certsDuration = 1500;
+    const certsFPS = 60;
+    const certsIncrement = 1 / (certsDuration / 1000 * certsFPS);
+    const certsInterval = setInterval(() => {
+      setAnimatedCerts(prev => {
+        if (prev >= 1) {
+          clearInterval(certsInterval);
+          return 1;
+        }
+        return Math.min(prev + certsIncrement, 1);
+      });
+    }, 1000 / certsFPS);
+    
+    const langsDuration = 2500;
+    const langsFPS = 60;
+    const langsIncrement = 5 / (langsDuration / 1000 * langsFPS);
+    const langsInterval = setInterval(() => {
+      setAnimatedLangs(prev => {
+        if (prev >= 5) {
+          clearInterval(langsInterval);
+          return 5;
+        }
+        return Math.min(prev + langsIncrement, 5);
+      });
+    }, 1000 / langsFPS);
+    
+    return () => {
+      clearInterval(yearsInterval);
+      clearInterval(certsInterval);
+      clearInterval(langsInterval);
+    };
+  }, []);
+  
   return (
     <div className="min-h-screen pt-24 pb-16 relative overflow-hidden">
       <div className="container mx-auto px-4">
@@ -14,71 +67,70 @@ const AboutMe = () => {
           <h1 className="big-title">PROFILE</h1>
         </div>
         
-        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
-          <div className="w-full lg:w-1/2 animate-fade-in">
-            <h1 className="text-white mb-2">
+        <div className="flex flex-col items-center justify-center max-w-4xl mx-auto">
+          <div className={`w-full transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
+            <h1 className="text-white text-center mb-4">
               About <span className="text-gradient">Me</span>
             </h1>
             
-            <div className="text-gray-300 space-y-4 mt-6">
-              <p>
+            <div className="text-gray-300 space-y-6 mt-8 text-lg text-center">
+              <p className="max-w-3xl mx-auto">
                 I'm Hector Colon Morales, a Computer Engineer Graduate and a Software Developer 
                 I at Wovenware a Maxar Company, a passionate about using technology to solve 
                 real-world problems and create exceptional user experiences.
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-                <div className="text-center">
-                  <h2 className="text-5xl font-bold text-portfolio-primary">4<span className="text-xl text-portfolio-blue">+</span></h2>
-                  <p className="text-white">Years of Experience</p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div className="text-center p-6 bg-gray-800/30 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+                  <h2 className="text-6xl font-bold text-portfolio-primary">
+                    {Math.floor(animatedYears)}<span className="text-xl text-portfolio-blue">+</span>
+                  </h2>
+                  <p className="text-white mt-2 text-xl">Years of Experience</p>
                 </div>
-                <div className="text-center">
-                  <h2 className="text-5xl font-bold text-portfolio-primary">1</h2>
-                  <p className="text-white">AWS Certification</p>
+                <div className="text-center p-6 bg-gray-800/30 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+                  <h2 className="text-6xl font-bold text-portfolio-primary">
+                    {Math.floor(animatedCerts)}
+                  </h2>
+                  <p className="text-white mt-2 text-xl">AWS Certification</p>
                 </div>
-                <div className="text-center">
-                  <h2 className="text-5xl font-bold text-portfolio-primary">5<span className="text-xl text-portfolio-blue">+</span></h2>
-                  <p className="text-white">Programming Language Skills</p>
+                <div className="text-center p-6 bg-gray-800/30 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+                  <h2 className="text-6xl font-bold text-portfolio-primary">
+                    {Math.floor(animatedLangs)}<span className="text-xl text-portfolio-blue">+</span>
+                  </h2>
+                  <p className="text-white mt-2 text-xl">Programming Language Skills</p>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4 mt-8">
+              <div className="flex items-center justify-center space-x-6 mt-12">
                 <a 
                   href="#"
-                  className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-portfolio-primary transition-colors"
+                  className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-portfolio-primary transition-colors duration-300"
                 >
-                  <Linkedin size={20} className="text-white" />
+                  <Linkedin size={24} className="text-white" />
                 </a>
                 <a 
                   href="#"
-                  className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-portfolio-primary transition-colors"
+                  className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-portfolio-primary transition-colors duration-300"
                 >
-                  <Github size={20} className="text-white" />
+                  <Github size={24} className="text-white" />
                 </a>
               </div>
               
-              <div className="mt-8">
-                <Button variant="outline" className="border-portfolio-primary text-white hover:bg-portfolio-primary">
+              <div className="mt-12 text-center">
+                <Button variant="outline" className="border-portfolio-primary text-white hover:bg-portfolio-primary transition-all duration-300 text-lg px-8 py-6">
                   Download CV
                 </Button>
               </div>
             </div>
           </div>
           
-          <div className="w-full lg:w-1/2 flex justify-center">
-            <Blob 
-              imageUrl="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
-              className="animate-slide-up"
-            />
+          <div className="mt-16 text-center">
+            <Link to="/skills">
+              <Button className="bg-portfolio-primary hover:bg-portfolio-secondary text-white text-lg px-8 py-6 transition-all duration-300">
+                Explore My Skills
+              </Button>
+            </Link>
           </div>
-        </div>
-        
-        <div className="mt-16 text-center">
-          <Link to="/skills">
-            <Button className="bg-portfolio-primary hover:bg-portfolio-secondary text-white">
-              Explore My Skills
-            </Button>
-          </Link>
         </div>
       </div>
     </div>
