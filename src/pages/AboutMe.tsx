@@ -104,20 +104,20 @@ const AboutMe = () => {
               <div className="flex items-center justify-center space-x-6 mt-12">
                 <a 
                   href="#"
-                  className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-portfolio-primary transition-colors duration-300"
+                  className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-portfolio-primary transition-colors relative after:absolute after:inset-0 after:rounded-full after:border-2 after:border-transparent hover:after:border-portfolio-primary after:transition-all"
                 >
                   <Linkedin size={24} className="text-white" />
                 </a>
                 <a 
                   href="#"
-                  className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-portfolio-primary transition-colors duration-300"
+                  className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-portfolio-primary transition-colors relative after:absolute after:inset-0 after:rounded-full after:border-2 after:border-transparent hover:after:border-portfolio-primary after:transition-all"
                 >
                   <Github size={24} className="text-white" />
                 </a>
               </div>
               
               <div className="mt-12 text-center">
-                <Button variant="outline" className="border-portfolio-primary text-white hover:bg-portfolio-primary transition-all duration-300 text-lg px-8 py-6">
+                <Button variant="outline" className="border-portfolio-primary text-white hover:bg-portfolio-primary transition-all duration-300 text-lg px-8 py-6 hover:border-portfolio-secondary">
                   Download CV
                 </Button>
               </div>
@@ -126,7 +126,7 @@ const AboutMe = () => {
           
           <div className="mt-16 text-center">
             <Link to="/skills">
-              <Button className="bg-portfolio-primary hover:bg-portfolio-secondary text-white text-lg px-8 py-6 transition-all duration-300">
+              <Button className="bg-portfolio-primary hover:bg-portfolio-secondary text-white text-lg px-8 py-6 transition-all duration-300 hover:ring-2 hover:ring-portfolio-primary hover:ring-offset-2 hover:ring-offset-black">
                 Explore My Skills
               </Button>
             </Link>

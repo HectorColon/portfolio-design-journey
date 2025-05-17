@@ -18,7 +18,7 @@ const Footer = () => {
               href="https://github.com" 
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-portfolio-primary transition-colors"
+              className="text-gray-400 hover:text-portfolio-primary transition-colors relative p-1 after:absolute after:inset-0 after:border after:border-transparent hover:after:border-portfolio-primary after:rounded-md after:transition-all"
               aria-label="GitHub"
             >
               <Github size={18} />
@@ -27,14 +27,14 @@ const Footer = () => {
               href="https://linkedin.com" 
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-portfolio-primary transition-colors"
+              className="text-gray-400 hover:text-portfolio-primary transition-colors relative p-1 after:absolute after:inset-0 after:border after:border-transparent hover:after:border-portfolio-primary after:rounded-md after:transition-all"
               aria-label="LinkedIn"
             >
               <Linkedin size={18} />
             </a>
             <a 
               href="mailto:hcolonsoftdev@gmail.com" 
-              className="text-gray-400 hover:text-portfolio-primary transition-colors"
+              className="text-gray-400 hover:text-portfolio-primary transition-colors relative p-1 after:absolute after:inset-0 after:border after:border-transparent hover:after:border-portfolio-primary after:rounded-md after:transition-all"
               aria-label="Email"
             >
               <Mail size={18} />
@@ -42,7 +42,7 @@ const Footer = () => {
           </div>
           <div className="mt-4 md:mt-0">
             <p className="text-gray-400 text-sm">
-              Built with <a href="https://lovable.dev" target="_blank" rel="noopener noreferrer" className="text-portfolio-primary hover:underline">lovable.dev</a>
+              Built with <a href="https://lovable.dev" target="_blank" rel="noopener noreferrer" className="text-portfolio-primary hover:underline relative">lovable.dev</a>
             </p>
           </div>
         </div>
