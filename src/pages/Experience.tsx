@@ -5,28 +5,40 @@ import TimelineItem from '@/components/ui/experience-timeline/TimelineItem';
 const Experience = () => {
   const experiences = [
     {
-      title: "Senior Software Developer",
-      company: "Wovenware",
-      period: "2023 - Present",
-      description: "Leading development of enterprise applications, mentoring junior developers, and implementing best practices for code quality and architecture."
-    },
-    {
       title: "Software Developer II",
-      company: "Wovenware",
-      period: "2021 - 2023",
-      description: "Developed full-stack applications using Angular and .NET Core, collaborated with cross-functional teams, and participated in code reviews and technical planning sessions."
+      company: "Maxar Intelligence",
+      period: "Dec 2023 - Present",
+      description: ""
     },
     {
       title: "Software Developer I",
-      company: "Wovenware",
-      period: "2019 - 2021",
-      description: "Implemented UI features using Angular, built RESTful APIs, and worked with SQL databases to deliver client solutions."
+      company: "Maxar Intelligence",
+      period: "Dec 2022 - Dec 2023",
+      description: ""
+    },
+    {
+      title: "Front-End Lead",
+      company: "NeoDeck Holdings Corp.",
+      period: "Jan 2022 - Nov 2022",
+      description: ""
+    },
+    {
+      title: "Front-End Developer",
+      company: "NeoDeck Holdings Corp.",
+      period: "Oct 2019 - Jan 2022",
+      description: ""
+    },
+    {
+      title: "S.T.E.M Instructor",
+      company: "Upward Bound Program - Pontifical Catholic University of Puerto Rico",
+      period: "2016 - 2020",
+      description: ""
     },
     {
       title: "Computer Engineering Graduate",
-      company: "University of Puerto Rico",
-      period: "2019",
-      description: "Completed bachelor's degree in Computer Engineering with focus on software development and system architecture."
+      company: "Polytechnic University of Puerto Rico",
+      period: "2018",
+      description: "Completed Bachelor's Degree in Computer Engineering."
     }
   ];
 

@@ -5,23 +5,23 @@ import SkillBar from '@/components/ui/skill-bar/SkillBar';
 const Skills = () => {
   const frameworks = [
     { name: 'Angular', percentage: 75 },
-    { name: 'React', percentage: 100 }
+    { name: 'React', percentage: 25 }
   ];
   
   const languages = [
     { name: 'Python', percentage: 75 },
-    { name: 'TypeScript', percentage: 100 },
-    { name: 'JavaScript', percentage: 100 },
-    { name: 'HTML', percentage: 100 },
-    { name: 'CSS', percentage: 100 }
+    { name: 'TypeScript', percentage: 50 },
+    { name: 'JavaScript', percentage: 50 },
+    { name: 'HTML', percentage: 75 },
+    { name: 'CSS', percentage: 75 }
   ];
   
   const tools = [
     { name: 'Adobe XD', percentage: 75 },
     { name: 'GitKraken', percentage: 100 },
     { name: 'GitHub', percentage: 100 },
-    { name: 'Docker', percentage: 100 },
-    { name: 'Kubernetes', percentage: 75 },
+    { name: 'Docker', percentage: 50 },
+    { name: 'Kubernetes', percentage: 50 },
     { name: 'Firebase', percentage: 50 },
     { name: 'Amazon Web Services', percentage: 100 }
   ];
@@ -88,6 +88,26 @@ const Skills = () => {
           <div className="bg-gray-900 bg-opacity-50 p-6 rounded-lg backdrop-blur-sm">
             <h3 className="text-xl text-white font-semibold mb-6">Certifications</h3>
             <div className="flex flex-col items-center">
+            <div className="w-48 h-48">
+                <img 
+                  src="" 
+                  alt="WS Cloud Quest: Cloud Practitioner"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="text-center mt-4">
+                <h4 className="text-lg text-white font-medium">AWS Cloud Quest</h4>
+                <p className="text-gray-400 text-sm mt-1">Cloud Practitioner</p>
+              </div>
+              <div className="mt-8">
+                <a 
+                  href="https://www.credly.com/badges/d1e40f38-44bf-4685-ba11-6735bb251cd8/public_url" 
+                  className="text-portfolio-primary hover:underline text-sm"
+                >
+                  View Credential
+                </a>
+              </div>
+              <br></br>
               <div className="w-48 h-48">
                 <img 
                   src="https://d1.awsstatic.com/training-and-certification/certification-badges/AWS-Certified-Cloud-Practitioner_badge.634f8a21af2e0e956ed8905a72366146ba22b74c.png" 
@@ -99,15 +119,36 @@ const Skills = () => {
                 <h4 className="text-lg text-white font-medium">AWS Cloud Practitioner</h4>
                 <p className="text-gray-400 text-sm mt-1">Foundational</p>
               </div>
-              
               <div className="mt-8">
                 <a 
-                  href="#" 
+                  href="https://www.credly.com/badges/02edb229-1d77-4dd1-8fc6-9c46763d47b0/public_url" 
                   className="text-portfolio-primary hover:underline text-sm"
                 >
                   View Credential
                 </a>
               </div>
+              <br></br>
+              <div className="w-48 h-48">
+                <img 
+                  src="" 
+                  alt="AWS Certified Developer - Associate"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="text-center mt-4">
+                <h4 className="text-lg text-white font-medium">AWS Certified Developer</h4>
+                <p className="text-gray-400 text-sm mt-1">Associate</p>
+              </div>
+              
+              <div className="mt-8">
+                <a 
+                  href="https://www.credly.com/badges/7dd42138-a039-4ea0-ae9e-1b3d90ddc32b/public_url" 
+                  className="text-portfolio-primary hover:underline text-sm"
+                >
+                  View Credential
+                </a>
+              </div>
+              
             </div>
           </div>
         </div>

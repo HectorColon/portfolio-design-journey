@@ -101,7 +101,7 @@ const AboutMe = () => {
                 </div>
               </div>
               
-              <div className="flex items-center justify-center space-x-6 mt-12">
+              {/* <div className="flex items-center justify-center space-x-6 mt-12">
                 <a 
                   href="#"
                   className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-portfolio-primary transition-colors relative after:absolute after:inset-0 after:rounded-full after:border-2 after:border-transparent hover:after:border-portfolio-primary after:transition-all"
@@ -114,9 +114,9 @@ const AboutMe = () => {
                 >
                   <Github size={24} className="text-white" />
                 </a>
-              </div>
+              </div> */}
               
-              <div className="mt-12 text-center">
+              {/* <div className="mt-12 text-center">
                 <a 
                   href="#" 
                   className="inline-flex items-center justify-center gap-2 bg-gray-800 text-gray-400 hover:text-portfolio-primary border border-transparent hover:border-portfolio-primary rounded-md p-3 transition-colors"
@@ -124,7 +124,7 @@ const AboutMe = () => {
                   <Download size={20} />
                   <span>Download CV</span>
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
           
