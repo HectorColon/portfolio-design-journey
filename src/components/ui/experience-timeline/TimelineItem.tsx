@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
+import IconBasedOnTitle from '@/components/ui/experience-icons/Timelineicons';
 
 interface TimelineItemProps {
   title: string;
@@ -20,7 +21,7 @@ const TimelineItem = ({
   return (
     <div className="flex">
       <div className="flex flex-col items-center mr-4">
-        <div className="w-4 h-4 bg-portfolio-primary rounded-full"></div>
+      <IconBasedOnTitle title={title}  />
         {!isLast && <div className="h-full w-0.5 bg-gray-700"></div>}
       </div>
       <div className="pb-8">

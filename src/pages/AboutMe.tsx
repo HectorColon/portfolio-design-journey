@@ -18,11 +18,7 @@ const AboutMe = () => {
     const yearsIncrement = 4 / (yearsDuration / 1000 * yearsFPS);
     const yearsInterval = setInterval(() => {
       setAnimatedYears(prev => {
-        if (prev >= 4) {
-          clearInterval(yearsInterval);
-          return 4;
-        }
-        return Math.min(prev + yearsIncrement, 4);
+        return Math.min(prev + yearsIncrement, 5);
       });
     }, 1000 / yearsFPS);
     
@@ -31,11 +27,7 @@ const AboutMe = () => {
     const certsIncrement = 1 / (certsDuration / 1000 * certsFPS);
     const certsInterval = setInterval(() => {
       setAnimatedCerts(prev => {
-        if (prev >= 1) {
-          clearInterval(certsInterval);
-          return 1;
-        }
-        return Math.min(prev + certsIncrement, 1);
+        return Math.min(prev + certsIncrement, 2);
       });
     }, 1000 / certsFPS);
     
@@ -44,10 +36,6 @@ const AboutMe = () => {
     const langsIncrement = 5 / (langsDuration / 1000 * langsFPS);
     const langsInterval = setInterval(() => {
       setAnimatedLangs(prev => {
-        if (prev >= 5) {
-          clearInterval(langsInterval);
-          return 5;
-        }
         return Math.min(prev + langsIncrement, 5);
       });
     }, 1000 / langsFPS);
@@ -75,9 +63,7 @@ const AboutMe = () => {
             
             <div className="text-gray-300 space-y-6 mt-8 text-lg text-center">
               <p className="max-w-3xl mx-auto">
-                I'm Hector Colon Morales, a Computer Engineer Graduate and a Software Developer 
-                I at Wovenware a Maxar Company, a passionate about using technology to solve 
-                real-world problems and create exceptional user experiences.
+              I'm Hector Colón Morales, a Computer Engineer and Software Developer II at Maxar Intelligence with over 5 years of experience in full-stack development. I specialize in building scalable, high-performance software solutions using modern technologies like AWS, and Python. As an AWS Certified Developer, I bring strong cloud-native development skills and a passion for clean code, system optimization, and collaborative team leadership. I'm continuously growing as a developer and eager to take on leadership roles that drive innovation and excellence.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">

@@ -15,13 +15,13 @@ const Contact = () => {
       icon: Linkedin,
       title: 'LinkedIn',
       value: 'Connect with me',
-      link: 'https://linkedin.com'
+      link: 'https://www.linkedin.com/in/hectorcolonmorales/'
     },
     {
       icon: Github,
       title: 'GitHub',
       value: 'Check my repositories',
-      link: 'https://github.com'
+      link: 'https://github.com/HectorColon'
     }
   ];
 

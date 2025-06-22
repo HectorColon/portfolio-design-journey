@@ -5,25 +5,33 @@ import SkillBar from '@/components/ui/skill-bar/SkillBar';
 const Skills = () => {
   const frameworks = [
     { name: 'Angular', percentage: 75 },
-    { name: 'React', percentage: 25 }
+    { name: 'React', percentage: 25 },
+    { name: 'Bootstrap', percentage: 75 },
   ];
   
   const languages = [
     { name: 'Python', percentage: 75 },
-    { name: 'TypeScript', percentage: 50 },
+    { name: 'TypeScript', percentage: 75 },
     { name: 'JavaScript', percentage: 50 },
     { name: 'HTML', percentage: 75 },
-    { name: 'CSS', percentage: 75 }
+    { name: 'CSS', percentage: 75 },
+    { name: 'Bash', percentage: 25 },
+    { name: 'Shell', percentage: 25 },
   ];
   
   const tools = [
     { name: 'Adobe XD', percentage: 75 },
     { name: 'GitKraken', percentage: 100 },
     { name: 'GitHub', percentage: 100 },
-    { name: 'Docker', percentage: 50 },
-    { name: 'Kubernetes', percentage: 50 },
-    { name: 'Firebase', percentage: 50 },
-    { name: 'Amazon Web Services', percentage: 100 }
+    { name: 'Docker', percentage: 25 },
+    { name: 'Kubernetes', percentage: 25 },
+    { name: 'Firebase', percentage: 25 },
+    { name: 'Amazon Web Services', percentage: 75 },
+    { name: 'Jenkins CI/CD', percentage: 25 },
+    { name: 'Postman', percentage: 75 },
+    { name: 'PyCharm', percentage: 50 },
+    { name: 'Bootstrap Studio', percentage: 50 },
+    { name: 'Firebase Studio', percentage: 25 },
   ];
 
   return (
@@ -90,8 +98,8 @@ const Skills = () => {
             <div className="flex flex-col items-center">
             <div className="w-48 h-48">
                 <img 
-                  src="" 
-                  alt="WS Cloud Quest: Cloud Practitioner"
+                  src="src/items/aws-cloud-quest-cloud-practitioner.png" 
+                  alt="AWS Cloud Quest: Cloud Practitioner"
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -102,6 +110,7 @@ const Skills = () => {
               <div className="mt-8">
                 <a 
                   href="https://www.credly.com/badges/d1e40f38-44bf-4685-ba11-6735bb251cd8/public_url" 
+                  target="_blank"
                   className="text-portfolio-primary hover:underline text-sm"
                 >
                   View Credential
@@ -110,7 +119,7 @@ const Skills = () => {
               <br></br>
               <div className="w-48 h-48">
                 <img 
-                  src="https://d1.awsstatic.com/training-and-certification/certification-badges/AWS-Certified-Cloud-Practitioner_badge.634f8a21af2e0e956ed8905a72366146ba22b74c.png" 
+                  src="src/items/aws-certified-cloud-practitioner.png" 
                   alt="AWS Certified Cloud Practitioner"
                   className="w-full h-full object-contain"
                 />
@@ -122,6 +131,7 @@ const Skills = () => {
               <div className="mt-8">
                 <a 
                   href="https://www.credly.com/badges/02edb229-1d77-4dd1-8fc6-9c46763d47b0/public_url" 
+                  target="_blank"
                   className="text-portfolio-primary hover:underline text-sm"
                 >
                   View Credential
@@ -130,7 +140,7 @@ const Skills = () => {
               <br></br>
               <div className="w-48 h-48">
                 <img 
-                  src="" 
+                  src="src/items/aws-certified-developer-associate.png" 
                   alt="AWS Certified Developer - Associate"
                   className="w-full h-full object-contain"
                 />
@@ -142,7 +152,8 @@ const Skills = () => {
               
               <div className="mt-8">
                 <a 
-                  href="https://www.credly.com/badges/7dd42138-a039-4ea0-ae9e-1b3d90ddc32b/public_url" 
+                  href="https://www.credly.com/badges/7dd42138-a039-4ea0-ae9e-1b3d90ddc32b/public_url"
+                  target="_blank" 
                   className="text-portfolio-primary hover:underline text-sm"
                 >
                   View Credential

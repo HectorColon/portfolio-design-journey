@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -19,46 +19,73 @@ const ContactForm = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setLoading(true);
+  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   setLoading(true);
     
+  //   try {
+  //     // This would typically send to a backend API
+  //     // For now, we'll use mailto link functionality
+  //     const mailtoLink = `mailto:hcolonsoftdev@gmail.com?subject=${encodeURIComponent(
+  //       formData.subject
+  //     )}&body=${encodeURIComponent(
+  //       `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+  //     )}`;
+      
+  //     window.location.href = mailtoLink;
+      
+ 
+      
+  //     // Reset the form
+  //     setFormData({
+  //       name: '',
+  //       email: '',
+  //       subject: '',
+  //       message: ''
+  //     });
+  //   } catch (error) {
+  
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
     try {
-      // This would typically send to a backend API
-      // For now, we'll use mailto link functionality
-      const mailtoLink = `mailto:hcolonsoftdev@gmail.com?subject=${encodeURIComponent(
-        formData.subject
-      )}&body=${encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
-      )}`;
-      
-      window.location.href = mailtoLink;
-      
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
+      const res = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
       });
-      
-      // Reset the form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
+      console.log(formData)
+      console.log(res)
+
+      const data = await res.json();
+
+      if (res.ok) {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
+      } else {
+        toast({
+          title: "Error",
+          description: "There was a problem sending your message. Please try again.",
+          variant: "destructive",
+        });
+      }
     } catch (error) {
       toast({
         title: "Error",
-        description: "There was a problem sending your message. Please try again.",
+        description: `There was a problem sending your message. Failed to send: ${error.message}`,
         variant: "destructive",
       });
-    } finally {
-      setLoading(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={sendEmail} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
