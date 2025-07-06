@@ -18,11 +18,7 @@ const AboutMe = () => {
     const yearsIncrement = 4 / (yearsDuration / 1000 * yearsFPS);
     const yearsInterval = setInterval(() => {
       setAnimatedYears(prev => {
-        if (prev >= 4) {
-          clearInterval(yearsInterval);
-          return 4;
-        }
-        return Math.min(prev + yearsIncrement, 4);
+        return Math.min(prev + yearsIncrement, 5);
       });
     }, 1000 / yearsFPS);
     
@@ -31,11 +27,7 @@ const AboutMe = () => {
     const certsIncrement = 1 / (certsDuration / 1000 * certsFPS);
     const certsInterval = setInterval(() => {
       setAnimatedCerts(prev => {
-        if (prev >= 1) {
-          clearInterval(certsInterval);
-          return 1;
-        }
-        return Math.min(prev + certsIncrement, 1);
+        return Math.min(prev + certsIncrement, 2);
       });
     }, 1000 / certsFPS);
     
@@ -44,10 +36,6 @@ const AboutMe = () => {
     const langsIncrement = 5 / (langsDuration / 1000 * langsFPS);
     const langsInterval = setInterval(() => {
       setAnimatedLangs(prev => {
-        if (prev >= 5) {
-          clearInterval(langsInterval);
-          return 5;
-        }
         return Math.min(prev + langsIncrement, 5);
       });
     }, 1000 / langsFPS);
@@ -63,23 +51,23 @@ const AboutMe = () => {
     <div className="min-h-screen pt-24 pb-16 relative overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Background title */}
-        <div className="absolute top-24 left-0 w-full">
-          <h1 className="big-title">PROFILE</h1>
+        <div className={`absolute top-24 left-0 w-full text-center transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
+          <h1 className="big-title text-gradient pb-16">PROFILE</h1>
         </div>
         
         <div className="flex flex-col items-center justify-center max-w-4xl mx-auto">
-          <div className={`w-full transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
+          <div className={`pt-4 w-full transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
             <h1 className="text-white text-center mb-4">
               About <span className="text-gradient">Me</span>
             </h1>
             
             <div className="text-gray-300 space-y-6 mt-8 text-lg text-center">
               <p className="max-w-3xl mx-auto">
-                I'm Hector Colon Morales, a Computer Engineer Graduate and a Software Developer 
-                I at Wovenware a Maxar Company, a passionate about using technology to solve 
-                real-world problems and create exceptional user experiences.
+              I'm Hector Colón Morales, a Computer Engineer Graduated from Polytechnic University of Puerto Rico and Software Developer II at Maxar with over 5 years of experience in full-stack development.
               </p>
-              
+              <p>
+                I specialize in building scalable, high-performance software solutions using modern technologies like AWS, and Python. As an AWS Certified Developer, I bring strong cloud-native development skills and a passion for clean code, system optimization, and collaborative team leadership. I'm continuously growing as a developer and eager to take on leadership roles that drive innovation and excellence.
+              </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                 <div className="text-center p-6 bg-gray-800/30 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
                   <h2 className="text-6xl font-bold text-portfolio-primary">
@@ -100,31 +88,7 @@ const AboutMe = () => {
                   <p className="text-white mt-2 text-xl">Programming Language Skills</p>
                 </div>
               </div>
-              
-              <div className="flex items-center justify-center space-x-6 mt-12">
-                <a 
-                  href="#"
-                  className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-portfolio-primary transition-colors relative after:absolute after:inset-0 after:rounded-full after:border-2 after:border-transparent hover:after:border-portfolio-primary after:transition-all"
-                >
-                  <Linkedin size={24} className="text-white" />
-                </a>
-                <a 
-                  href="#"
-                  className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-portfolio-primary transition-colors relative after:absolute after:inset-0 after:rounded-full after:border-2 after:border-transparent hover:after:border-portfolio-primary after:transition-all"
-                >
-                  <Github size={24} className="text-white" />
-                </a>
-              </div>
-              
-              <div className="mt-12 text-center">
-                <a 
-                  href="#" 
-                  className="inline-flex items-center justify-center gap-2 bg-gray-800 text-gray-400 hover:text-portfolio-primary border border-transparent hover:border-portfolio-primary rounded-md p-3 transition-colors"
-                >
-                  <Download size={20} />
-                  <span>Download CV</span>
-                </a>
-              </div>
+
             </div>
           </div>
           

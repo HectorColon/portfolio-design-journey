@@ -111,7 +111,7 @@
   }
   
   .big-title {
-    @apply relative opacity-5 text-8xl font-extrabold uppercase absolute top-0 left-0 -z-10;
+    @apply relative opacity-25 text-8xl font-extrabold uppercase top-0 left-0;
   }
 }
 
