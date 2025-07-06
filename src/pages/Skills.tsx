@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SkillBar from '@/components/ui/skill-bar/SkillBar';
 
 
@@ -35,6 +35,25 @@ const Skills = () => {
     { name: 'Firebase Studio', percentage: 25 },
   ];
 
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+  const [justifyContent, setJustifyContent] = useState("Default Text");
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (windowSize < 900) {
+      setJustifyContent("center");
+    } else  {
+      setJustifyContent("space-between");
+    }
+  }, [windowSize]);
 
 
   return (
@@ -100,8 +119,8 @@ const Skills = () => {
           {/* Certifications Section */}
           <div className="bg-gray-900 bg-opacity-50 p-6 rounded-lg backdrop-blur-sm">
             <h3 className="text-xl text-white font-semibold mb-6">Certifications</h3>
-            <div className="flex" style={{justifyContent: "space-between"}}>
-              <div className="flex flex-row items-center">
+            <div className="flex flex-start flex-wrap items-center"  style={{justifyContent: justifyContent, justifyItems:"center"}}>
+              <div className="flex flex-row items-center p-2" style={{justifyItems:"center", width: "400px"}}>
                 <div className="w-48 h-48">
                 <img 
                   src="src/items/aws-cloud-quest-cloud-practitioner.png" 
@@ -123,12 +142,13 @@ const Skills = () => {
                 </div>
                 </div>
               </div>
-              <div className="flex flex-row items-center">
+              <div className="flex flex-row items-center p-2" style={{justifyItems:"center", width: "400px"}}>
                 <div className="w-48 h-48">
                 <img 
+                  width="192px"
                   src="src/items/aws-certified-cloud-practitioner.png" 
                   alt="AWS Certified Cloud Practitioner"
-                  className="w-full h-full object-contain"
+                  className="object-contain"
                 />
                 </div>
                 <div className="text-center mt-4">
@@ -145,12 +165,13 @@ const Skills = () => {
                 </div>
                 </div>
               </div>             
-              <div className="flex flex-row items-center">
+              <div className="flex flex-row items-center p-2" style={{justifyItems:"center", width: "400px"}}>
                 <div className="w-48 h-48">
                 <img 
+                  width="192px"
                   src="src/items/aws-certified-developer-associate.png" 
                   alt="AWS Certified Developer - Associate"
-                  className="w-full h-full object-contain"
+                  className="object-contain"
                 />
                 </div>
                 <div className="text-center mt-4 pr-4">
