@@ -1,15 +1,15 @@
 import React from 'react';
 import { Briefcase, GraduationCap, BookOpenCheck } from 'lucide-react'; // Example using react-icons
 
-const IconBasedOnTitle = ({ title }) => {
+const IconBasedOnTitle = ({ type }) => {
     let iconSize = 24
     let iconComponent = <Briefcase size={iconSize}/>; // Or a default icon
   
-  switch (title) {
-    case 'S.T.E.M Instructor':
+  switch (type) {
+    case 'school':
       iconComponent = <BookOpenCheck size={iconSize}/>;
       break;
-    case 'Computer Engineering Graduate':
+    case 'college':
       iconComponent = <GraduationCap size={iconSize}/>;
       break;
     default:

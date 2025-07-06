@@ -5,6 +5,7 @@ import IconBasedOnTitle from '@/components/ui/experience-icons/Timelineicons';
 
 interface TimelineItemProps {
   title: string;
+  type: string;
   company: string;
   period: string;
   description: string;
@@ -13,6 +14,7 @@ interface TimelineItemProps {
 
 const TimelineItem = ({ 
   title, 
+  type, 
   company, 
   period, 
   description, 
@@ -21,7 +23,7 @@ const TimelineItem = ({
   return (
     <div className="flex">
       <div className="flex flex-col items-center mr-4">
-      <IconBasedOnTitle title={title}  />
+      <IconBasedOnTitle type={type}  />
         {!isLast && <div className="h-full w-0.5 bg-gray-700"></div>}
       </div>
       <div className="pb-8">

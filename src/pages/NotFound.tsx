@@ -13,12 +13,11 @@ const NotFound = () => {
       <main className="flex-grow flex items-center justify-center">
         <div className="container mx-auto px-4 py-16 text-center">
           <div className="relative">
+            <h1 className="pt-4 text-white mb-6">Page Not Found</h1>
             <div className="absolute top-0 left-0 w-full">
-              <h1 className="big-title">404</h1>
+              <h1 className="big-title text-gradient">404</h1>
             </div>
-            
-            <h1 className="text-white mb-6">Page Not Found</h1>
-            
+
             <p className="text-gray-400 max-w-lg mx-auto mb-8">
               The page you are looking for might have been removed, had its name changed,
               or is temporarily unavailable.
