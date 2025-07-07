@@ -42,7 +42,7 @@ const Experience = () => {
     {
       title: "S.T.E.M Instructor",
       company: "Upward Bound Program - Pontifical Catholic University of Puerto Rico",
-      period: "Jun 2014 - feb 2020",
+      period: "Jun 2014 - Feb 2020",
       type: "school",
       description: "Delivered STEM-focused instruction to high school students, emphasizing programming and engineering principles. Integrated hands-on activities using Basic Electricity, Arduino UNO (C/C++), PBASIC programming, and LEGO Mindstorms to develop problem-solving skills and computational thinking. Aimed to foster interest and prepare students for future careers in technology and engineering fields."
     },
