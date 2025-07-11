@@ -46,6 +46,17 @@ const AboutMe = () => {
       clearInterval(langsInterval);
     };
   }, []);
+    // TODO NEED IMPROVEMENT TO AVOID DUPLICATED CODE
+    const [windowSize, setWindowSize] = useState(window.innerWidth);
+  
+    useEffect(() => {
+      const handleResize = () => {
+        setWindowSize(window.innerWidth);
+      };
+  
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
   
   return (
     <div className="min-h-screen pt-24 pb-16 relative overflow-hidden">
@@ -62,8 +73,8 @@ const AboutMe = () => {
             </h1>
             
             <div className="text-gray-300 space-y-6 mt-8 text-lg text-center">
-              <p className="max-w-3xl mx-auto">
-              I'm Hector Colón Morales, a Computer Engineer Graduated from Polytechnic University of Puerto Rico and Software Developer II at Maxar with over 5 years of experience in full-stack development.
+              <p className={windowSize < 1200 ? "pt-8 max-w-3xl mx-auto" : "max-w-3xl mx-auto"}>
+              I'm a Computer Engineer Graduated from Polytechnic University of Puerto Rico and Software Developer II at Maxar with over 5 years of experience in full-stack development.
               </p>
               <p>
                 I specialize in building scalable, high-performance software solutions using modern technologies like AWS, and Python. As an AWS Certified Developer, I bring strong cloud-native development skills and a passion for clean code, system optimization, and collaborative team leadership. I'm continuously growing as a developer and eager to take on leadership roles that drive innovation and excellence.

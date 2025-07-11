@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import TimelineItem from '@/components/ui/experience-timeline/TimelineItem';
 
 const Experience = () => {
@@ -54,6 +54,17 @@ const Experience = () => {
       description: "Led a cross-functional team in the design and implementation of a web-based system enabling company directors to securely access their accounts and monitor tasks across multiple departments. Oversaw daily and weekly status reporting, ensured adherence to client testing protocols, and maintained compliance with established processes and documentation standards."
     },
   ];
+  // TODO NEED IMPROVEMENT TO AVOID DUPLICATED CODE
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div className="min-h-screen pt-24 pb-16 relative overflow-hidden bg-black">
@@ -67,7 +78,7 @@ const Experience = () => {
           <h1 className="text-white">
             <span className="text-gradient">Experience</span>
           </h1>
-          <p className="pt-4 text-gray-400 mt-4 max-w-2xl mx-auto">
+          <p className={windowSize < 1200 ? "pt-8 text-gray-400 mt-4 max-w-2xl mx-auto" : "pt-4 text-gray-400 mt-4 max-w-2xl mx-auto"}>
           My professional journey has equipped me with diverse experience in software development—from building user interfaces to developing complex backend systems—as well as teaching STEM concepts to high school students through hands-on programming, electronics, and robotics projects.
           </p>
         </div>

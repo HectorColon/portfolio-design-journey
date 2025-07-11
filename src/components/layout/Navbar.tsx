@@ -14,7 +14,7 @@ const Navbar = () => {
     { text: "About Me", href: "/" },
     { text: "Skills/Certifications", href: "/skills" },
     { text: "Experience", href: "/experience" },
-    { text: "Blog", href: "/notfound" },
+    // { text: "Blog", href: "/notfound" },
     { text: "Contact Me", href: "/contact" },
   ];
 

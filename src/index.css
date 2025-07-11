@@ -113,6 +113,18 @@
   .big-title {
     @apply relative opacity-25 text-8xl font-extrabold uppercase top-0 left-0;
   }
+
+  .big-title-certification {
+    @apply relative opacity-25 text-8xl font-extrabold uppercase top-0 left-0;
+    font-size: 10vw;
+    padding-top: 16px;
+  }
+
+  .big-title-contact {
+    @apply relative opacity-25 text-8xl font-extrabold uppercase top-0 left-0;
+    font-size: 15vw;
+    padding-top: 7px;
+  }
 }
 
 @layer utilities {

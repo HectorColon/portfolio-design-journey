@@ -1,4 +1,5 @@
 
+import React, { useEffect, useState } from 'react';
 import { Mail, Linkedin, Github, Clock,  MapPin,  Circle,  Paperclip, PhoneCallIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Download } from 'lucide-react'; // Example using react-icons
@@ -40,13 +41,37 @@ const Contact = () => {
       link.click();
       document.body.removeChild(link);
   };
+// TODO NEED IMPROVEMENT TO AVOID DUPLICATED CODE
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+  const [justifyContent, setJustifyContent] = useState("Default Text");
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (windowSize < 1200) {  
+      setJustifyContent("start");
+    } else  {
+      setJustifyContent("space-between");
+    }
+  }, [windowSize]);
+
+  const buttonStyle = {
+    width: "275px"
+  }
 
   return (
     <div className="min-h-screen pt-24 pb-16 relative overflow-hidden bg-black">
       <div className="container mx-auto px-4">
         {/* Background title */}
         <div className="absolute top-24 left-0 w-full text-center">
-          <h1 className="big-title text-gradient pb-16">MESSAGES</h1>
+          <h1 className={windowSize < 1200 ? "big-title-contact text-gradient" : "big-title text-gradient pb-16"}>MESSAGES</h1>
         </div>
         
         <div className="mb-16 text-center animate-fade-in">
@@ -90,8 +115,8 @@ const Contact = () => {
           </div>
               ))}
           <div className="lg:col-span-3 bg-gray-900 bg-opacity-50 p-6 rounded-lg backdrop-blur-sm">
-            <div className='flex' style={{justifyContent:"space-between"}}>
-              <div>
+            <div className={windowSize < 1200 ? "" : "flex flex-start flex-wrap"}  style={{justifyContent: justifyContent, justifyItems:"center"}}>
+              <div className={windowSize < 1200 ? "pb-8" : ""}>
                 <div className="flex items-start">
                   <div className="w-10 h-10 text-portfolio-primary"><Clock size="24"/></div>
                   <h4 className="text-white font-medium">Office Hours</h4>
@@ -101,7 +126,7 @@ const Contact = () => {
                 <p>8:00 AM - 5:00 PM AST</p>
               </div>
             </div>
-            <div>
+            <div className={windowSize < 1200 ? "pb-8" : ""}>
               <div className="flex items-start">
                 <div className="w-10 h-10 text-portfolio-primary"><MapPin size="24"/></div>
               <h4 className="text-white font-medium">Currently Based</h4>
@@ -129,13 +154,14 @@ const Contact = () => {
               <div className="flex flex-col items-center">
               <img width={500}  src="src/items/HECTOR_COLON_MORALES_PREVIEW.jpg" alt="Resume Preview" />
               <div className="mt-16 text-center">
-              <Button onClick={onButtonClick} className="bg-portfolio-primary hover:bg-portfolio-secondary text-white text-lg px-8 py-6 transition-all duration-300 hover:ring-2 hover:ring-portfolio-primary hover:ring-offset-2 hover:ring-offset-black">
-                <Download size="24"/> Download Resume (PDF) 
+              <Button onClick={onButtonClick} className="bg-portfolio-primary hover:bg-portfolio-secondary text-white text-lg px-8 py-6 transition-all duration-300 hover:ring-2 hover:ring-portfolio-primary hover:ring-offset-2 hover:ring-offset-black"
+                style={windowSize < 1200 ? buttonStyle: {}}>
+                <Download size="24"/> <p>Download Resume (PDF)</p>
               </Button>
             </div>
             </div>
           </div>
-        </div>
+        </div> 
       </div>
     </div>
   );
