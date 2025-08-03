@@ -9,7 +9,7 @@ const Index = () => {
     <div className="flex flex-col min-h-screen bg-black">
       <Navbar />
       <main className="flex-grow">
-        <Navigate to="/about" replace />
+        <Navigate to="/home" replace />
         <Outlet />
       </main>
       <Footer />

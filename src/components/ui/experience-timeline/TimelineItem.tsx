@@ -1,6 +1,4 @@
 
-import React from 'react';
-import { cn } from '@/lib/utils';
 import IconBasedOnTitle from '@/components/ui/experience-icons/Timelineicons';
 
 interface TimelineItemProps {
@@ -32,7 +30,7 @@ const TimelineItem = ({
           <span className="text-portfolio-primary">{company}</span>
         </div>
         <div className="text-sm text-gray-400 mt-1">{period}</div>
-        <p className="text-gray-300 mt-2">{description}</p>
+        <p className="text-gray-300 mt-2 text-justify">{description}</p>
       </div>
     </div>
   );
