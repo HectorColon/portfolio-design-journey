@@ -398,7 +398,7 @@ const Home = () => {
                 <div className="w-10 h-10 text-portfolio-primary" style={{ animation: "pulse 4s infinite" }}><GraduationCap size="24" /></div>
                 <h4 className="text-white font-medium">Educational Proposals</h4>
               </div>
-              <div className="text-white font-medium">Commin Soon...</div>
+              <div className="text-white font-medium">Coming Soon...</div>
             </div>
           </div>
         </div>
