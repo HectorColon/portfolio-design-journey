@@ -60,22 +60,22 @@ const AboutMe = ({scrollToDiv}:AboutMeProps) => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
               <div className="text-center p-6 bg-gray-800/30 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <h2 className="text-6xl font-bold text-portfolio-primary">
-                  {Math.floor(animatedYears)}<span className="text-xl text-portfolio-blue">+</span>
+                <h2 className="text-6xl font-bold text-white">
+                  {Math.floor(animatedYears)}<span className="text-xl">+</span>
                 </h2>
-                <p className="text-white mt-2 text-xl">Years of Experience</p>
+                <p className="text-gradient mt-2 text-xl">Years of Experience</p>
               </div>
               <div className="text-center p-6 bg-gray-800/30 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <h2 className="text-6xl font-bold text-portfolio-primary">
+                <h2 className="text-6xl font-bold text-white">
                   {Math.floor(animatedCerts)}
                 </h2>
-                <p className="text-white mt-2 text-xl">AWS Certification</p>
+                <p className="text-gradient mt-2 text-xl">AWS Certification</p>
               </div>
               <div className="text-center p-6 bg-gray-800/30 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
-                <h2 className="text-6xl font-bold text-portfolio-primary">
-                  {Math.floor(animatedLangs)}<span className="text-xl text-portfolio-blue">+</span>
+                <h2 className="text-6xl font-bold text-white">
+                  {Math.floor(animatedLangs)}<span className="text-xl">+</span>
                 </h2>
-                <p className="text-white mt-2 text-xl">Programming Language Skills</p>
+                <p className="text-gradient mt-2 text-xl">Programming Language Skills</p>
               </div>
             </div>
 
