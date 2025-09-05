@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -73,7 +72,7 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-    
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -93,23 +92,28 @@
   body {
     @apply bg-black text-foreground;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold;
   }
-  
+
   h1 {
     @apply text-4xl md:text-5xl lg:text-6xl;
   }
-  
+
   h2 {
     @apply text-3xl md:text-4xl lg:text-5xl;
   }
-  
+
   h3 {
     @apply text-2xl md:text-3xl;
   }
-  
+
   .big-title {
     @apply relative opacity-25 text-8xl font-extrabold uppercase top-0 left-0;
   }
@@ -131,6 +135,60 @@
     font-size: 15vw;
     padding-top: 7px;
   }
+
+  .skeleton {
+    position: relative;
+    overflow: hidden;
+    background-color: #e2e2e2; /* Base color for the skeleton */
+}
+
+.skeleton::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+.skeleton-image,
+.skeleton-title,
+.skeleton-text {
+    background-color: #ccc; /* Color for individual skeleton elements */
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.skeleton-image {
+    height: 150px; /* Example height for an image placeholder */
+}
+
+.skeleton-title {
+    height: 20px;
+    width: 70%; /* Example width for a title placeholder */
+}
+
+.skeleton-text {
+    height: 16px;
+    width: 90%; /* Example width for text placeholder */
+}
+
+.skeleton-text.short {
+    width: 50%;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+
 }
 
 @layer utilities {

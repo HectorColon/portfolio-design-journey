@@ -10,6 +10,12 @@ import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import BlogList from "./pages/BlogList";
+import Article from "./pages/Article";
+import AdminLogin from "./pages/admin/AdminLogin";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import PostManager from "./pages/admin/PostManager";
+import PostEditor from "./pages/admin/PostEditor";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +38,16 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Layout><Home /></Layout>} />
           <Route path="/blog" element={<Layout><Blog /></Layout>} />
+          <Route path="/list" element={<Layout><BlogList /></Layout>} />
+          <Route path="/article/:slug" element={<Layout><Article /></Layout>} />
+          
+          {/* Admin Routes */}
+          <Route path="/admin/login" element={<Layout><AdminLogin /></Layout>} />
+          <Route path="/admin/dashboard" element={<Layout><AdminDashboard /></Layout>} />
+          <Route path="/admin/posts" element={<Layout><PostManager /></Layout>} />
+          <Route path="/admin/posts/new" element={<Layout><PostEditor /></Layout>} />
+          <Route path="/admin/posts/edit/:id" element={<Layout><PostEditor /></Layout>}/>
+          
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

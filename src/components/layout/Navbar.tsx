@@ -24,13 +24,25 @@ const Navbar = () => {
     { text: "Skills/Certifications", href: "skills" },
     { text: "Experience", href: "experience" },
     { text: "Blog", href: "/blog" },
+    { text: "BlogList", href: "/list", hidden: true },
+    { text: "Article", href: "/article", hidden: true },
     { text: "Contact Me", href: "contact" },
   ];
+
+  const customLink = [
+    { text: "Home", href: "/" },
+    { text: "Blog Admin", href: "/admin/login" },
+  ]
 
   const location = useLocation();
 
   // The 'location' object contains properties related to the current URL
   const { pathname, search, hash } = location;
+
+  // Matches any "/admin/*" route
+  const isAdminRoute = pathname.startsWith("/admin/");
+  const isBlogList = pathname.startsWith("/list");
+  const isArticle = pathname.startsWith("/article");
 
   return (
     <nav className="py-6 px-4 md:px-8 w-full fixed top-0 left-0 z-50 bg-black bg-opacity-80 backdrop-blur-sm">
@@ -59,26 +71,35 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className={isMobile ? "hidden space-x-8" : "md:flex space-x-8"}>
+          {
+            pathname === '/admin/login' && (
+              <Link to="/blog"
+                className="text-white hover:text-portfolio-primary border border-transparent hover:border-portfolio-primary px-4 py-2 rounded-md transition-all duration-300"
+                onClick={() => { setIsMenuOpen(false) }}>{"Blog"}</Link>
+            )
+          }
           {pathname === '/blog' && ( // Show button only on /blog path
-            <Link
-              key={0}
-              to={'/'}
-              className="text-white hover:text-portfolio-primary border border-transparent hover:border-portfolio-primary px-4 py-2 rounded-md transition-all duration-300"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {'Home'}
-            </Link>
-          )}
-          {pathname != '/blog' && (
-            links.map((link, index) => (
+            customLink.map((link, index) => (
               <Link
+                key={index}
+                to={link.href}
+                className="text-white hover:text-portfolio-primary border border-transparent hover:border-portfolio-primary px-4 py-2 rounded-md transition-all duration-300"
+                onClick={() => { scrollToDiv(link.href), setIsMenuOpen(false) }}
+              >
+                {link.text}
+              </Link>
+            ))
+          )}
+          {(pathname != '/blog' && !isAdminRoute && !isBlogList && !isArticle) && (
+            links.map((link, index) => (
+              !link.hidden ? <Link
                 key={index}
                 to={link.text == 'Blog' ? link.href : pathname == '/notfound' ? "/" : ""}
                 className="text-white hover:text-portfolio-primary border border-transparent hover:border-portfolio-primary px-4 py-2 rounded-md transition-all duration-300"
                 onClick={() => { scrollToDiv(link.href), setIsMenuOpen(false) }}
               >
                 {link.text}
-              </Link>
+              </Link> : ""
             ))
           )}
         </div>
@@ -87,17 +108,26 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="absolute top-16 left-0 w-full bg-black bg-opacity-95 py-4">
             <div className="flex flex-col space-y-4 items-center">
+              {
+                pathname === '/admin/login' && (
+                  <Link to="/blog"
+                    className="text-white hover:text-portfolio-primary border border-transparent hover:border-portfolio-primary px-4 py-2 rounded-md transition-all duration-300"
+                    onClick={() => { setIsMenuOpen(false) }}>{"Blog"}</Link>
+                )
+              }
               {pathname === '/blog' && ( // Show button only on /blog path
-                <Link
-                  key={0}
-                  to={'/'}
-                  className="text-white hover:text-portfolio-primary border border-transparent hover:border-portfolio-primary px-4 py-2 rounded-md transition-all duration-300"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {'Home'}
-                </Link>
+                customLink.map((link, index) => (
+                  <Link
+                    key={index}
+                    to={link.href}
+                    className="text-white hover:text-portfolio-primary border border-transparent hover:border-portfolio-primary px-4 py-2 rounded-md transition-all duration-300"
+                    onClick={() => { scrollToDiv(link.href), setIsMenuOpen(false) }}
+                  >
+                    {link.text}
+                  </Link>
+                ))
               )}
-              {pathname != '/blog' && (
+              {(pathname != '/blog' && !isAdminRoute && !isBlogList && !isArticle) && (
                 links.map((link, index) => (
                   <Link
                     key={index}
