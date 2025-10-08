@@ -30,7 +30,8 @@ const TimelineItem = ({
           <span className="text-portfolio-primary">{company}</span>
         </div>
         <div className="text-sm text-gray-400 mt-1">{period}</div>
-        <p className="text-gray-300 mt-2 text-justify">{description}</p>
+        <div className="text-gray-300 mt-2 text-justify" dangerouslySetInnerHTML={{ __html: description }} />
+        {/* <p className="text-gray-300 mt-2 text-justify">{description}</p> */}
       </div>
     </div>
   );

@@ -1,5 +1,4 @@
-import { Circle, Clock, Download, MapPin, Paperclip } from "lucide-react"
-import { Button } from "../ui/button"
+import { Circle, Clock, MapPin, Paperclip } from "lucide-react"
 import { contactMethods } from "@/constants/contact_methods"
 
 interface ContactMeProps {

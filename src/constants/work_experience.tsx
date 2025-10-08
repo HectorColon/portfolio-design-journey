@@ -7,33 +7,33 @@ export const workExperience = [
         description: "Developed and maintained automated data workflows using Python and Stonebranch, optimizing data processing and reducing manual intervention across multiple systems. Managed and monitored SSIS jobs and SQL Server processes to ensure reliable and efficient ETL operations. Designed and implemented SQL queries and stored procedures to support reporting, analytics, and operational needs. Collaborated with cross-functional teams to manage and validate PBM data, including benefits, patient information, and prior authorizations, ensuring accuracy and compliance with healthcare standards. Proactively identified performance bottlenecks and implemented process improvements for greater scalability and data integrity."
     },
     {
-        title: "Software Developer II",
+        title: "Software Developer I | Software Developer II",
         company: "Vantor",
-        period: "Dec 2023 - Ago 2025",
+        period: "Dec 2022 - Dec 2023 | Dec 2023 - Ago 2025",
         type: "work",
-        description: "Led code reviews, design sessions, and team meetings to foster a collaborative, high-performing development environment. Partnered with cross-functional teams to resolve complex technical issues and ensure application reliability. Conducted rigorous testing and debugging for timely, high-quality project delivery. Monitored system performance bi-weekly, identifying improvements and mitigating risks. Oversaw junior developers through mentorship, pair programming, and code guidance. Also monitored and supported ETL workflows, ensuring data accuracy and optimal processing efficiency."
+        description: "Developed and integrated RESTful APIs to enhance system communication and application performance. Supported CI/CD workflows to ensure code quality and reliable deployments. Implemented a serverless AWS Lambda architecture to efficiently process over 44,000 data entries via ETL.<br><br> Led code reviews, design sessions, and team meetings to foster a collaborative, high-performing development environment. Partnered with cross-functional teams to resolve complex technical issues and ensure application reliability. Conducted rigorous testing and debugging for timely, high-quality project delivery. Monitored system performance bi-weekly, identifying improvements and mitigating risks. Oversaw junior developers through mentorship, pair programming, and code guidance. Also monitored and supported ETL workflows, ensuring data accuracy and optimal processing efficiency."
     },
+    // {
+    //     title: "Software Developer I",
+    //     company: "Vantor",
+    //     period: "Dec 2022 - Dec 2023",
+    //     type: "work",
+    //     description: "Developed and integrated RESTful APIs to enhance system communication and application performance. Supported CI/CD workflows to ensure code quality and reliable deployments. Implemented a serverless AWS Lambda architecture to efficiently process over 44,000 data entries via ETL."
+    // },
     {
-        title: "Software Developer I",
-        company: "Vantor",
-        period: "Dec 2022 - Dec 2023",
-        type: "work",
-        description: "Developed and integrated RESTful APIs to enhance system communication and application performance. Supported CI/CD workflows to ensure code quality and reliable deployments. Implemented a serverless AWS Lambda architecture to efficiently process over 44,000 data entries via ETL."
-    },
-    {
-        title: "Front-End Lead",
+        title: "Front-End Developer | Front-End Lead",
         company: "NeoDeck Holdings Corp.",
-        period: "Jan 2022 - Nov 2022",
+        period: "Jan 2022 - Nov 2022 | Oct 2019 - Jan 2022",
         type: "work",
-        description: "Led a team of 6 developers, delivering key features on time and boosting productivity by 20%. Improved deployment reliability by reducing bugs 40% through a release candidate process. Mentored team members to strengthen technical skills and foster growth. Managed microservices using Kubernetes (Lens IDE) and Docker with YAML templates."
+        description: "Built interactive, scalable web applications with Angular, HTML, CSS, and TypeScript, improving user experience and front-end efficiency through clean, optimized code. <br><br> Led a team of 6 developers, delivering key features on time and boosting productivity by 20%. Improved deployment reliability by reducing bugs 40% through a release candidate process. Mentored team members to strengthen technical skills and foster growth. Managed microservices using Kubernetes (Lens IDE) and Docker with YAML templates."
     },
-    {
-        title: "Front-End Developer",
-        company: "NeoDeck Holdings Corp.",
-        period: "Oct 2019 - Jan 2022",
-        type: "work",
-        description: "Built interactive, scalable web applications with Angular, HTML, CSS, and TypeScript, improving user experience and front-end efficiency through clean, optimized code."
-    },
+    // {
+    //     title: "Front-End Developer",
+    //     company: "NeoDeck Holdings Corp.",
+    //     period: "Oct 2019 - Jan 2022",
+    //     type: "work",
+    //     description: "Built interactive, scalable web applications with Angular, HTML, CSS, and TypeScript, improving user experience and front-end efficiency through clean, optimized code."
+    // },
     {
         title: "Computer Engineering Graduate",
         company: "Polytechnic University of Puerto Rico",
