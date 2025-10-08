@@ -15,7 +15,8 @@ export const skills = [{
         { name: 'HTML', percentage: 100 },
         { name: 'CSS', percentage: 100 },
         { name: 'Bash', percentage: 25 },
-        { name: 'Shell', percentage: 25 }
+        { name: 'Shell', percentage: 25 },
+        { name: 'SQL', percentage: 25 }
     ]
 }, {
     category: "Tools",
@@ -31,12 +32,15 @@ export const skills = [{
         { name: 'Postman', percentage: 75 },
         { name: 'PyCharm', percentage: 75 },
         { name: 'Bootstrap Studio', percentage: 50 },
-        { name: 'Firebase Studio', percentage: 25 }
+        { name: 'Firebase Studio', percentage: 25 },
+        { name: 'Microsoft SQL Server', percentage: 25 },
+        { name: 'Stonebranch', percentage: 25 }
     ]
 },
 {
     category: "Database",
-    items: [{ name: 'AWS - DynamoDB', percentage: 100 }
+    items: [
+        { name: 'AWS - DynamoDB', percentage: 100 },
     ]
 },
 {

@@ -1,3 +1,4 @@
+import { professionalTitle } from "@/constants/title";
 
 const Footer = () => {
   return (
@@ -8,7 +9,7 @@ const Footer = () => {
             <p className="text-gray-400 text-md">
               © {new Date().getFullYear()} Héctor Colón Morales &nbsp;|&nbsp;&nbsp;
             </p>
-            <p className="text-gradient">Full Stack Engineer</p>
+            <p className="text-gradient">{professionalTitle}</p>
           </div>
           <div className="mt-4 md:mt-0 flex">
             <p className="text-gray-400 text-md">

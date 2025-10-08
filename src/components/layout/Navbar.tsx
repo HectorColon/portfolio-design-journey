@@ -23,7 +23,7 @@ const Navbar = () => {
     { text: "About Me", href: "about" },
     { text: "Skills/Certifications", href: "skills" },
     { text: "Experience", href: "experience" },
-    { text: "Blog", href: "/blog" },
+    // { text: "Blog", href: "/blog" },
     { text: "Contact Me", href: "contact" },
   ];
 

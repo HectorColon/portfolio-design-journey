@@ -1,14 +1,21 @@
 export const workExperience = [
+     {
+        title: "Associate Data Engineer",
+        company: "Abarca Health Technology",
+        period: "Dec 2023 - Ago 2025",
+        type: "work",
+        description: "Developed and maintained automated data workflows using Python and Stonebranch, optimizing data processing and reducing manual intervention across multiple systems. Managed and monitored SSIS jobs and SQL Server processes to ensure reliable and efficient ETL operations. Designed and implemented SQL queries and stored procedures to support reporting, analytics, and operational needs. Collaborated with cross-functional teams to manage and validate PBM data, including benefits, patient information, and prior authorizations, ensuring accuracy and compliance with healthcare standards. Proactively identified performance bottlenecks and implemented process improvements for greater scalability and data integrity."
+    },
     {
         title: "Software Developer II",
-        company: "Maxar",
-        period: "Dec 2023 - Present",
+        company: "Vantor",
+        period: "Dec 2023 - Ago 2025",
         type: "work",
         description: "Led code reviews, design sessions, and team meetings to foster a collaborative, high-performing development environment. Partnered with cross-functional teams to resolve complex technical issues and ensure application reliability. Conducted rigorous testing and debugging for timely, high-quality project delivery. Monitored system performance bi-weekly, identifying improvements and mitigating risks. Oversaw junior developers through mentorship, pair programming, and code guidance. Also monitored and supported ETL workflows, ensuring data accuracy and optimal processing efficiency."
     },
     {
         title: "Software Developer I",
-        company: "Maxar",
+        company: "Vantor",
         period: "Dec 2022 - Dec 2023",
         type: "work",
         description: "Developed and integrated RESTful APIs to enhance system communication and application performance. Supported CI/CD workflows to ensure code quality and reliable deployments. Implemented a serverless AWS Lambda architecture to efficiently process over 44,000 data entries via ETL."

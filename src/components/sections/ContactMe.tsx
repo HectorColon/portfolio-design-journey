@@ -102,14 +102,15 @@ const ContactMe = ({
                         <h4 className="text-white font-medium">Resume</h4>
                     </div>
                     <div className="flex flex-col items-center">
+                        <p className="text-gradient">Updated Resume Coming Soon!</p>
                         {/* <img width={500} src="src/items/HECTOR_COLON_MORALES_PREVIEW.jpg" alt="Resume Preview" /> */}
-                        <embed src="src/items/HECTOR_COLON_MORALES_.pdf" width="500" height="625"></embed>
+                        {/* <embed src="src/items/HECTOR_COLON_MORALES_.pdf" width="500" height="625"></embed>
                         <div className="mt-8 text-center">
                             <Button onClick={onButtonClick} className="bg-portfolio-primary hover:bg-portfolio-secondary text-white text-lg px-8 py-6 transition-all duration-300 hover:ring-2 hover:ring-portfolio-primary hover:ring-offset-2 hover:ring-offset-black"
                                 style={isMobile ? buttonStyle : {}}>
                                 <Download size="24" /> <p>Download Resume (PDF)</p>
                             </Button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 {/* <div className="lg:col-span-4 bg-gray-900 bg-opacity-50 p-6 rounded-lg backdrop-blur-sm">
