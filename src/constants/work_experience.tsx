@@ -2,7 +2,7 @@ export const workExperience = [
     {
         company: "Abarca Health Technology",
         type: "work",
-        items: [{ title: "Associate Data Engineer", period: "Dec 2023 - Present", description: "Developed and maintained automated data workflows using Python and Stonebranch, optimizing data processing and reducing manual intervention across multiple systems. Managed and monitored SSIS jobs and SQL Server processes to ensure reliable and efficient ETL operations. Designed and implemented SQL queries and stored procedures to support reporting, analytics, and operational needs. Collaborated with cross-functional teams to manage and validate PBM data, including benefits, patient information, and prior authorizations, ensuring accuracy and compliance with healthcare standards. Proactively identified performance bottlenecks and implemented process improvements for greater scalability and data integrity." }]
+        items: [{ title: "Associate Data Engineer", period: "Ago 2025 - Present", description: "Developed and maintained automated data workflows using Python and Stonebranch, optimizing data processing and reducing manual intervention across multiple systems. Managed and monitored SSIS jobs and SQL Server processes to ensure reliable and efficient ETL operations. Designed and implemented SQL queries and stored procedures to support reporting, analytics, and operational needs. Collaborated with cross-functional teams to manage and validate PBM data, including benefits, patient information, and prior authorizations, ensuring accuracy and compliance with healthcare standards. Proactively identified performance bottlenecks and implemented process improvements for greater scalability and data integrity." }]
     },
     {
         company: "Vantor",
