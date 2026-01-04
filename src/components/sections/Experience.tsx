@@ -31,13 +31,11 @@ const Experience = ({
                 {/* Timeline */}
                 <div className={isMobile ? "relative z-10 py-8 p-4" : "relative z-10 py-8"}>
                   {workExperience.map((exp, index) => (
-                    <TimelineItem
+                     <TimelineItem
                       key={index}
-                      title={exp.title}
-                      type={exp.type}
                       company={exp.company}
-                      period={exp.period}
-                      description={exp.description}
+                      type={exp.type}
+                      items={exp.items}
                       isLast={index === workExperience.length - 1}
                     />
                   ))}
