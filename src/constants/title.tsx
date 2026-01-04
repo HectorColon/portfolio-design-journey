@@ -1,0 +1,1 @@
+export const professionalTitle = "Full-Stack / Assoc. Data Engineer"

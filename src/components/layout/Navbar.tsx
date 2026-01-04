@@ -1,34 +1,46 @@
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { cn } from "@/lib/utils";
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const isMobile = useIsMobile()
+  const scrollToDiv = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const links = [
-    { text: "About Me", href: "/" },
-    { text: "Skills/Certifications", href: "/skills" },
-    { text: "Experience", href: "/experience" },
-    { text: "Blog", href: "/notfound" },
-    { text: "Contact Me", href: "/contact" },
+    { text: "About Me", href: "about" },
+    { text: "Skills/Certifications", href: "skills" },
+    { text: "Experience", href: "experience" },
+    // { text: "Blog", href: "/blog" },
+    { text: "Contact Me", href: "contact" },
   ];
+
+  const location = useLocation();
+
+  // The 'location' object contains properties related to the current URL
+  const { pathname, search, hash } = location;
 
   return (
     <nav className="py-6 px-4 md:px-8 w-full fixed top-0 left-0 z-50 bg-black bg-opacity-80 backdrop-blur-sm">
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-xl font-bold text-white hover:text-portfolio-primary transition-colors">
-          Héctor Colón Morales
-        </Link>
-        
+        <p className="text-xl font-bold text-white text-gradient"> Héctor Colón Morales </p>
+
         {/* Mobile Menu Button */}
-        <button 
-          onClick={toggleMenu} 
-          className="md:hidden focus:outline-none"
+        <button
+          onClick={toggleMenu}
+          className={isMobile ? "focus:outline-none" : "hidden focus:outline-none"}
           aria-label="Toggle menu"
         >
           <div className={cn(
@@ -44,34 +56,59 @@ const Navbar = () => {
             isMenuOpen && "-translate-y-2 -rotate-45"
           )} />
         </button>
-        
+
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8">
-          {links.map((link, index) => (
-            <Link 
-              key={index}
-              to={link.href} 
+        <div className={isMobile ? "hidden space-x-8" : "md:flex space-x-8"}>
+          {pathname === '/blog' && ( // Show button only on /blog path
+            <Link
+              key={0}
+              to={'/'}
               className="text-white hover:text-portfolio-primary border border-transparent hover:border-portfolio-primary px-4 py-2 rounded-md transition-all duration-300"
+              onClick={() => setIsMenuOpen(false)}
             >
-              {link.text}
+              {'Home'}
             </Link>
-          ))}
+          )}
+          {pathname != '/blog' && (
+            links.map((link, index) => (
+              <Link
+                key={index}
+                to={link.text == 'Blog' ? link.href : pathname == '/notfound' ? "/" : ""}
+                className="text-white hover:text-portfolio-primary border border-transparent hover:border-portfolio-primary px-4 py-2 rounded-md transition-all duration-300"
+                onClick={() => { scrollToDiv(link.href), setIsMenuOpen(false) }}
+              >
+                {link.text}
+              </Link>
+            ))
+          )}
         </div>
-        
+
         {/* Mobile Menu Dropdown */}
         {isMenuOpen && (
-          <div className="absolute top-16 left-0 w-full bg-black bg-opacity-95 py-4 md:hidden">
+          <div className="absolute top-16 left-0 w-full bg-black bg-opacity-95 py-4">
             <div className="flex flex-col space-y-4 items-center">
-              {links.map((link, index) => (
-                <Link 
-                  key={index}
-                  to={link.href} 
+              {pathname === '/blog' && ( // Show button only on /blog path
+                <Link
+                  key={0}
+                  to={'/'}
                   className="text-white hover:text-portfolio-primary border border-transparent hover:border-portfolio-primary px-4 py-2 rounded-md transition-all duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {link.text}
+                  {'Home'}
                 </Link>
-              ))}
+              )}
+              {pathname != '/blog' && (
+                links.map((link, index) => (
+                  <Link
+                    key={index}
+                    to={link.text == 'Blog' ? link.href : pathname == '/notfound' ? "/" : ""}
+                    className="text-white hover:text-portfolio-primary border border-transparent hover:border-portfolio-primary px-4 py-2 rounded-md transition-all duration-300"
+                    onClick={() => { scrollToDiv(link.href), setIsMenuOpen(false) }}
+                  >
+                    {link.text}
+                  </Link>
+                ))
+              )}
             </div>
           </div>
         )}
