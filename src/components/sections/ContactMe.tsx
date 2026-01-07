@@ -14,10 +14,10 @@ const ContactMe = ({
     buttonStyle,
 }: ContactMeProps) => {
     const onButtonClick = () => {
-        const pdfUrl = "src/items/HECTOR_COLON_MORALES_.pdf";
+        const pdfUrl = "src/items/Hector_Colon_Morales_Software_Engineer.pdf";
         const link = document.createElement("a");
         link.href = pdfUrl;
-        link.download = "HECTOR_COLON_MORALES.pdf";
+        link.download = "Hector_Colon_Morales_Software_Engineer.pdf";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -103,7 +103,7 @@ const ContactMe = ({
                     </div>
                     <div className="flex flex-col items-center">
                         {/* <p className="text-gradient">Updated Resume Coming Soon!</p> */}
-                        <img width={500} src="src/items/HECTOR_COLON_MORALES_PREVIEW.jpg" alt="Resume Preview" />
+                        <img width={500} src="src/items/Hector_Colon_Morales_Software_Engineer.jpg" alt="Resume Preview" />
                         <div className="mt-8 text-center">
                             <Button onClick={onButtonClick} className="bg-portfolio-primary hover:bg-portfolio-secondary text-white text-lg px-8 py-6 transition-all duration-300 hover:ring-2 hover:ring-portfolio-primary hover:ring-offset-2 hover:ring-offset-black"
                                 style={isMobile ? buttonStyle : {}}>
