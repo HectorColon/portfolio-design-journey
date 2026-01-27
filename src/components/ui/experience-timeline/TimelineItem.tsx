@@ -35,7 +35,7 @@ const TimelineItem = ({
 
             <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 pt-8">
               <h3 className="text-xl text-white font-semibold">{item.title}</h3>
-              <span className='text-white'>|</span>
+              {/* <span className='text-white'>|</span> */}
               <span className="text-portfolio-primary">{item.period}</span>
             </div>
             <div className="text-gray-300 mt-2 text-justify" dangerouslySetInnerHTML={{ __html: item.description }} />
