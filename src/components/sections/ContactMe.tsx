@@ -96,13 +96,12 @@ const ContactMe = ({
                         </div>
                     </div>
                 </div>
-                <div className="lg:col-span-4 bg-gray-900 bg-opacity-50 p-6 rounded-lg backdrop-blur-sm">
+                {/* <div className="lg:col-span-4 bg-gray-900 bg-opacity-50 p-6 rounded-lg backdrop-blur-sm">
                     <div className="flex items-start">
                         <div className="w-10 h-10 text-portfolio-primary" style={{ animation: "pulse 4s infinite" }}><Paperclip size="24" /></div>
                         <h4 className="text-white font-medium">Resume</h4>
                     </div>
                     <div className="flex flex-col items-center">
-                        {/* <p className="text-gradient">Updated Resume Coming Soon!</p> */}
                         <img width={500} src="src/items/Hector_Colon_Morales_Software_Engineer.jpg" alt="Resume Preview" />
                         <div className="mt-8 text-center">
                             <Button onClick={onButtonClick} className="bg-portfolio-primary hover:bg-portfolio-secondary text-white text-lg px-8 py-6 transition-all duration-300 hover:ring-2 hover:ring-portfolio-primary hover:ring-offset-2 hover:ring-offset-black"
@@ -111,7 +110,7 @@ const ContactMe = ({
                             </Button>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 {/* <div className="lg:col-span-4 bg-gray-900 bg-opacity-50 p-6 rounded-lg backdrop-blur-sm">
               <div className="flex items-start">
                 <div className="w-10 h-10 text-portfolio-primary" style={{ animation: "pulse 4s infinite" }}><GraduationCap size="24" /></div>
