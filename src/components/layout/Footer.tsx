@@ -13,7 +13,7 @@ const Footer = () => {
           </div>
           <div className="mt-4 md:mt-0 flex">
             <p className="text-gray-400 text-md">
-              Built with <a href="https://lovable.dev" target="_blank" rel="noopener noreferrer" className="text-portfolio-primary hover:underline relative">lovable.dev</a> & Modified by Me
+              Built with <a href="https://lovable.dev" target="_blank" rel="noopener noreferrer" className="text-portfolio-primary hover:underline relative">lovable.dev</a> ⚡ React, TypeScript, Tailwind CSS, and Vite & Modified by Me
             </p>
           </div>
         </div>
