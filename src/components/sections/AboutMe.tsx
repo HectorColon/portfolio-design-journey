@@ -11,6 +11,8 @@ const AboutMe = ({scrollToDiv}:AboutMeProps) => {
   const [animatedCerts, setAnimatedCerts] = useState(0);
   const [animatedLangs, setAnimatedLangs] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  // Assuming experience starts in 2020, Oct 2019 for Front-End Developer role, but using 2020 for simplicity and to account for the fact that the first few months may not be full experience. Adjust as needed based on actual start date and how you want to represent it.
+  const experienceYrs = new Date().getFullYear() - 2020; 
 
   useEffect(() => {
     setIsVisible(true);
@@ -19,7 +21,7 @@ const AboutMe = ({scrollToDiv}:AboutMeProps) => {
     const yearsIncrement = 4 / (yearsDuration / 1000 * yearsFPS);
     const yearsInterval = setInterval(() => {
       setAnimatedYears(prev => {
-        return Math.min(prev + yearsIncrement, 5);
+        return Math.min(prev + yearsIncrement, experienceYrs);
       });
     }, 1000 / yearsFPS);
 
