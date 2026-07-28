@@ -1,4 +1,4 @@
-import { professionalTitle } from "@/constants/title";
+import { nameTitle, professionalTitle } from "@/constants/title";
 
 const Footer = () => {
   return (
@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0 flex">
             <p className="text-gray-400 text-md">
-              © {new Date().getFullYear()} Héctor Colón Morales &nbsp;|&nbsp;&nbsp;
+              © {new Date().getFullYear()} {nameTitle} &nbsp;|&nbsp;&nbsp;
             </p>
             <p className="text-gradient">{professionalTitle}</p>
           </div>

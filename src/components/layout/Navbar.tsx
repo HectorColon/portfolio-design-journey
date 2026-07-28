@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from "@/lib/utils";
 import { useIsMobile } from '@/hooks/use-mobile';
+import { nameTitle } from '@/constants/title';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,7 +36,7 @@ const Navbar = () => {
   return (
     <nav className="py-6 px-4 md:px-8 w-full fixed top-0 left-0 z-50 bg-black bg-opacity-80 backdrop-blur-sm">
       <div className="container mx-auto flex justify-between items-center">
-        <p className="text-xl font-bold text-white text-gradient"> Héctor Colón Morales </p>
+        <p className="text-xl font-bold text-white text-gradient"> {nameTitle} </p>
 
         {/* Mobile Menu Button */}
         <button

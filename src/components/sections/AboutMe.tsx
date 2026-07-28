@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
-import { professionalTitle } from "@/constants/title";
+import { professionalTitle, nameTitle } from "@/constants/title";
 
 interface AboutMeProps {
   scrollToDiv: any
@@ -55,7 +55,7 @@ const AboutMe = ({scrollToDiv}:AboutMeProps) => {
       {/* Background title */}
       <div className="flex flex-col items-center justify-center max-w-4xl mx-auto">
         <div className={`pt-4 w-full transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-10'}`}>
-          <h1 className="text-white text-center mb-4">  Héctor Colón Morales  </h1>
+          <h1 className="text-white text-center mb-4"> {nameTitle} </h1>
           <h1 className="text-white text-center mb-4"> <span className="text-gradient">{professionalTitle}</span>  </h1>
           <h3 className="text-white text-center mb-4">Geospatial | Healthcare | Cloud Infrastructure | Scalable UI/UX</h3>
           <div className="text-gray-300 space-y-6 mt-8 text-lg text-center">
