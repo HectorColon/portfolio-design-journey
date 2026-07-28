@@ -1,1 +1,2 @@
-export const professionalTitle = "Full-Stack / Assoc. Data Engineer"
+export const professionalTitle = "Software Engineer / Full-Stack Software Engineer"
+export const nameTitle = "Héctor Raúl Colón Morales"
