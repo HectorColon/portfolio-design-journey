@@ -59,3 +59,7 @@ The portfolio is deployed to Firebase Hosting.
 -   To deploy the build to Firebase, use the following command (requires Firebase CLI and authentication):
     ```sh
     npm run deploy
+
+## 📊 Diagram
+
+[![Architecture diagram of hectorcolon/portfolio-design-journey](https://gitdiagram.com/hectorcolon/portfolio-design-journey/diagram.png)](https://gitdiagram.com/hectorcolon/portfolio-design-journey?utm_source=readme&utm_medium=picture)
