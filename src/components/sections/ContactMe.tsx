@@ -73,7 +73,7 @@ const ContactMe = ({
                             </div>
                             <div className="text-gray-400">
                                 <p>Monday - Friday</p>
-                                <p>8:00 AM - 5:00 PM AST</p>
+                                <p>8:00AM - 5:00PM PDT</p>
                             </div>
                         </div>
                         <div className={isMobile ? "pb-8" : ""}>
@@ -82,7 +82,7 @@ const ContactMe = ({
                                 <h4 className="text-white font-medium">Currently Based</h4>
                             </div>
                             <div className="text-gray-400">
-                                <p>Open to remote opportunities globally</p>
+                                <p>San Diego, CA & Open to remote opportunities globally</p>
                             </div>
                         </div>
                         <div>
