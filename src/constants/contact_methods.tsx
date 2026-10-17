@@ -17,7 +17,7 @@ export const contactMethods = [
             icon: PhoneCallIcon,
             title: 'WhatsApp',
             value: `Let's Talk`,
-            link: 'https://wa.me/7872430820'
+            link: 'https://wa.me/6197427118'
         },
         {
             icon: Slack,
