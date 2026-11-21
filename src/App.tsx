@@ -10,11 +10,13 @@ import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import ScrollProgress from "./components/motion/ScrollProgress";
 
 const queryClient = new QueryClient();
 
 const Layout = ({ children }: { children: React.ReactNode }) => (
   <div className="flex flex-col min-h-screen bg-black">
+    <ScrollProgress />
     <Navbar />
     <main className="flex-grow">
       {children}
