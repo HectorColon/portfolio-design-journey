@@ -5,6 +5,7 @@ import AboutMe from '@/components/sections/AboutMe';
 import Skills from '@/components/sections/Skills';
 import Experience from '@/components/sections/Experience';
 import ContactMe from '@/components/sections/ContactMe';
+import { prefersReducedMotion } from '@/hooks/use-in-view';
 
 const Home = () => {
   const isMobile = useIsMobile()
@@ -22,7 +23,7 @@ const Home = () => {
   const scrollToDiv = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'start' });
     }
   };
 
