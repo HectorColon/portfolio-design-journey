@@ -28,10 +28,14 @@ const AboutMe = ({ scrollToDiv }: AboutMeProps) => {
   const nameLines = [words.slice(0, mid).join(" "), words.slice(mid).join(" ")];
 
   // Start the entrance after first paint so the hidden state is actually rendered.
+  // If a loading screen is up, wait for it to start lifting.
   useEffect(() => {
-    let r2 = 0;
-    const r1 = requestAnimationFrame(() => { r2 = requestAnimationFrame(() => setReady(true)); });
-    return () => { cancelAnimationFrame(r1); cancelAnimationFrame(r2); };
+    let r1 = 0, r2 = 0;
+    const start = () => { r1 = requestAnimationFrame(() => { r2 = requestAnimationFrame(() => setReady(true)); }); };
+    const waiting = !document.documentElement.hasAttribute("data-revealed") && document.querySelector("[data-loading-screen]");
+    if (waiting) window.addEventListener("app:revealed", start, { once: true });
+    else start();
+    return () => { window.removeEventListener("app:revealed", start); cancelAnimationFrame(r1); cancelAnimationFrame(r2); };
   }, []);
 
   // A soft light that trails the pointer across the hero.

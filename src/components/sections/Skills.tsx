@@ -20,6 +20,13 @@ const certifications = [
     href: "https://www.credly.com/badges/d1e40f38-44bf-4685-ba11-6735bb251cd8/public_url",
   },
   {
+    src: "src/items/aws-cloud-quest-generative-ai-practitioner-training.png",
+    alt: "AWS Cloud Quest: Generative AI Practitioner",
+    title: "AWS Cloud Quest",
+    subtitle: "Generative AI Practitioner Trained",
+    href: "https://www.credly.com/badges/74421a28-7793-4be5-a5ce-eeca347411d5/public_url",
+  },
+  {
     src: "src/items/aws-certified-cloud-practitioner.png",
     alt: "AWS Certified Cloud Practitioner",
     title: "AWS Cloud Practitioner",
@@ -32,7 +39,7 @@ const certifications = [
     title: "AWS Certified Developer",
     subtitle: "Associate",
     href: "https://www.credly.com/badges/7dd42138-a039-4ea0-ae9e-1b3d90ddc32b/public_url",
-  },
+  }
 ]
 
 const SkillPanel = ({ categories, delay }: { categories: typeof skills, delay: number }) => (
