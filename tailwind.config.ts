@@ -19,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				display: ['"Bricolage Grotesque Variable"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+				body: ['"Newsreader Variable"', 'Georgia', 'Cambria', 'serif']
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -101,6 +105,14 @@ export default {
 						borderRadius: '30% 60% 70% 40%/50% 60% 30% 60%' 
 					}
 				},
+				drift: {
+					'0%': { transform: 'translate3d(0,0,0) scale(1)' },
+					'100%': { transform: 'translate3d(-6%,8%,0) scale(1.12)' }
+				},
+				'drift-slow': {
+					'0%': { transform: 'translate3d(0,0,0) scale(1.05)' },
+					'100%': { transform: 'translate3d(8%,-6%,0) scale(0.95)' }
+				},
 				fadeIn: {
 					'0%': { opacity: '0' },
 					'100%': { opacity: '1' }
@@ -118,6 +130,8 @@ export default {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'blob': 'blob-movement 8s ease-in-out infinite',
+				'drift': 'drift 24s ease-in-out infinite alternate',
+				'drift-slow': 'drift-slow 32s ease-in-out infinite alternate',
 				'fade-in': 'fadeIn 0.5s ease-in-out forwards',
 				'slide-down': 'slideDown 0.5s ease-in-out forwards',
 				'slide-up': 'slideUp 0.5s ease-in-out forwards'
